@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+ int main() {
+ int n, ano;
+    
+ scanf("%i", &n);
+    
+ while (n--) { 
+ scanf("%i", &ano);
+        
+ if (ano < 2015)
+ printf("%i D.C.\n", 2015 - ano);
+ else
+ printf("%i A.C.\n", ano - 2014);
+}
+
+return 0;
+}

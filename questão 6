@@ -1,25 +1,33 @@
 #include <stdio.h>
-int main()
-{
-    int tst;
-    double price;
-    double amount = 0.00;
-    int code, quantity;
+
+int main() {
+    int tst, code, quantity;
+    double amount = 0.0;
+    
     scanf("%d", &tst);
-    while(tst--)
-    {
+
+    while (tst--) {
         scanf("%d %d", &code, &quantity);
-        if(code==1001)
-            amount += (double) quantity*1.50;
-        else if(code==1002)
-                amount += (double) quantity*2.50;
-        else if(code==1003)
-                amount += (double) quantity*3.50;
-        else if(code==1004)
-                amount += (double) quantity*4.50;
-        else if(code==1005)
-                amount += (double) quantity*5.50;
+
+        switch (code) {
+            case 1001:
+                amount += 1.50 * quantity;
+                break;
+            case 1002:
+                amount += 2.50 * quantity;
+                break;
+            case 1003:
+                amount += 3.50 * quantity;
+                break;
+            case 1004:
+                amount += 4.50 * quantity;
+                break;
+            case 1005:
+                amount += 5.50 * quantity;
+                break;
+        }
     }
+
     printf("%.2lf\n", amount);
     return 0;
 }
